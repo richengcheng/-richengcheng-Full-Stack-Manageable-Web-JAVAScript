@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>HomePage</title>
+	<meta name="description" content="form to add new books">
+	<meta name="author" content="Mark Tyers">
+	<link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body style="background-color:yellow;">
+
+	<h1 style="text-align:center;font-family:arial;color:rgb(111, 0, 255);font-size:50px;"> Welcome To The New World
+	</h1>
+
+	<p><a href="/questionPage">test your understanding</a></p> <br>
+
+
+	<div id="header" style="background-color:#FFA500;">
+		<h1 style="font-family:arial;color:rgb(17, 0, 255);font-size:30px;">{{title}}</h1>
+	</div>
+
+
+	<div id="menu" style="background-color:#FFD700;height:500px;width:170px;float:left;">
+
+		<p><a href="/Homepage/1">GoBackToTheFirstpage</a></p> <br>
+		<p><a href="/logout">log out</a></p> <br>
+
+		{{#if nextPageChecking}}
+		<form action="/HomePage/{{nextPageChecking}}" method="get">
+			<input type="submit" value="NextPage">
+		</form><br>
+		{{/if }}
+
+		{{#if prePageChecking}}
+		<form action="/HomePage/{{prePageChecking}}" method="get">
+			<input type="submit" value="previous page">
+		</form>
+		{{/if }}
+	</div>
+
+	<div style="float:left;" >
+		<table border="10">
+			<caption>your test record</caption>
+			<tr>
+				<th>test topic</th>
+				<th>your record</th>
+				<th>state</th>
+			</tr>
+
+			{{#each Score}}
+
+			<tr>
+				<td>{{this.questionTopic}}</td>
+				<td>{{this.scores}}</td>
+				<td>{{this.state}}</td>
+			</tr>
+			{{/each}}
+		</table>
+	</div>
+
+
+	<div id="content" style="background-color:#EEEEEE;height:500px;width:400px;float:left;">
+		<p style="font-family:arial;color:rgb(255, 0, 0);font-size:25px;">{{content}}</p>
+	</div>
+
+	<div id="content" style="background-color:#EEEEEE;height:500px;width:400px;float:left;">
+		<img src="/avatars/{{picturePath}}" height="500" width="700">
+	</div>
+
+	<div id="footer" style="background-color:#FFA500;clear:both;text-align:center;"> RichengCheng 8887597</div>
+	</div>
+</body>
+
+</html>

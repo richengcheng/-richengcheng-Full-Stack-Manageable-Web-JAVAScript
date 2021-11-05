@@ -1,0 +1,77 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learning Content Edit</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <h1>Learning Content Edit </h1>
+
+
+
+    <table border="10">
+        <caption>The learning content you want to edit</caption>
+        <tr>
+            <th>content</th>
+            <th>picturePath</th>
+
+        </tr>
+        <tr>
+            <td>{{content}}</td>
+            <td>{{picturePath}}</td>
+        </tr>
+
+    </table> <br>
+
+
+    <h2>The function u can do </h2> 
+     <td><a href="/delete/{{id}}">delete</a></td> <br>
+
+
+    <div>
+        <h3>add a new content </h3>
+        <form action="/addNewContent/{{id}}" enctype="multipart/form-data" method="post">
+
+            content:
+            <textarea name="content" cols="40" rows="14"></textarea>
+            Profile Picture:
+            <input type="file" name="avatar" value="" />
+            <input type="submit" value="Add a new contentpage" />
+        </form>
+
+    </div>
+    <br>
+
+
+
+      <div>
+        <h3>update a content </h3>
+        <form action="/UpdateAccount/{{id}}" enctype="multipart/form-data" method="post">
+
+            Content:
+            <textarea name="content" cols="40" rows="14" >{{content}}</textarea>
+     
+            Profile Picture:
+            <input type="file" name="avatar" value="" />
+            <input type="submit" value="update a new contentpage" />
+        </form>
+    </div> <br>
+
+
+
+    <td><a href="/adminPage">Go back adminPage</a></td> <br>
+
+    <p><a href="/logout">go back to the login page</a></p>
+
+
+
+</body>
+
+</html>

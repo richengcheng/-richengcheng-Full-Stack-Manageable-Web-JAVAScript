@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>adminQuestionContentEdit</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body>
+    <h1>{{questionTopic}} Topic question Content Edit </h1>
+
+
+
+    <table border="10">
+        <caption>The {{questionTopic}} Topic question you can to edit</caption>
+        <tr>
+            <th>Questioncontent</th>
+            <th>option1</th>
+            <th>option2</th>
+            <th>option3</th>
+            <th>option4</th>
+            <th>answer</th>
+
+        </tr>
+        <tr>
+            <td>{{Questioncontent}}</td>
+            <td>{{option1}}</td>
+            <td>{{option2}}</td>
+            <td>{{option3}}</td>
+            <td>{{option4}}</td>
+            <td>{{answer}}</td>
+        </tr>
+
+    </table> <br>
+
+
+    <caption>The function u can do </caption> <br><br>
+    <td><a href="/deleteQuestion/{{id}}">deleteThisQuestion</a></td> <br>
+
+    <div>
+        <h1>update a question content ({{questionTopic}} topic only)</h1>
+        <form action="/updateQuestion/{{id}}" enctype="multipart/form-data" method="post">
+
+            Content:
+            <textarea name="content" cols="25" rows="3">{{Questioncontent}}</textarea>
+            option1:
+            <input type="text" name="option1" value="{{option1}}" />
+            option2:
+            <input type="text" name="option2" value="{{option2}}" />
+            option3:
+            <input type="text" name="option3" value="{{option3}}" />
+            option4:
+            <input type="text" name="option4" value="{{option4}}" />
+            answer:
+            <input type="text" name="answer" value="{{answer}}" />
+
+            <input type="submit" value="update a new question content" />
+        </form>
+    </div> <br>
+
+    <div>
+        <h1>add a new question content ({{questionTopic}} topic only)</h1>
+        <form action="/addQuesiton/{{id}}" enctype="multipart/form-data" method="post">
+
+            Content:
+            <textarea name="content" cols="25" rows="3" value=""></textarea>
+
+            option1:
+            <input type="text" name="option1" value="" />
+            option2:
+            <input type="text" name="option2" value="" />
+            option3:
+            <input type="text" name="option3" value="" />
+            option4:
+            <input type="text" name="option4" value="" />
+            answer:
+            <input type="text" name="answer" value="" />
+
+            <input type="submit" value="Add a new question content" />
+        </form>
+
+    </div>
+    <br>
+
+
+
+
+
+
+
+    <td><a href="/adminPage">Go back adminPage</a></td> <br>
+
+
+    <p><a href="/logout">go back to the login page</a></p>
+
+
+
+</body>
+
+</html>

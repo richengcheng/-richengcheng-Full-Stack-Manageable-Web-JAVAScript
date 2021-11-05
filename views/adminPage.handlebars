@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>adminPage</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <h1>admin page </h1>
+
+    <p><a href="/logout">go back to the login page</a></p> <br>
+
+    <div style="float:left; display:inline">
+
+    <table border="10">
+        <caption>HomePage Content List</caption>
+        <tr>
+            <th>id</th>
+            <th>content</th>
+            <th>picturePath</th>
+            <th>Action</th>
+        </tr>
+
+        {{#each contents}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.content}}</td>
+            <td>{{this.picturePath}}</td>
+            <td><a href="/EditLearningContent/{{this.id}}">Edit Or Add</td>
+        </tr>
+        {{/each}}
+    </table> 
+    </div></tr></tr>
+
+<div style="float:left; display:inline">
+    <caption>QuestionContent List for Math </caption>
+
+    <div style="width:700px;height:300px;overflow-y:scroll;overflow-x:none;" >
+
+        <table  border="10"> 
+            
+            <tr>
+                <th>id</th>
+                <th>question content</th>
+                <th>option1</th>
+                <th>option2</th>
+                <th>option3</th>
+                <th>option4</th>
+                <th>answer</th>
+                   <th>action</th>
+            </tr>
+            <br>
+
+            {{#each MathQuestion}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.content}}</td>
+                <td>{{this.option1}}</td>
+                <td>{{this.option2}}</td>
+                <td>{{this.option3}}</td>
+                <td>{{this.option4}}</td>
+                <td>{{answer}}</td>
+            
+                <td><a href="/EditingQuestion/{{this.id}}">Edit Or Add</a></td>
+            </tr>
+            {{/each}}
+        </table>
+
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div style="background-color:#FFD700;float:left;">
+
+    <caption>QuestionContent List for HTML5 </caption>
+    <div style="width:1400px;height:400px;overflow-y:scroll;overflow-x:none;">
+        <table border="10">
+            
+            <tr>
+                <th>id</th>
+                <th>question content</th>
+                <th>option1</th>
+                <th>option2</th>
+                <th>option3</th>
+                <th>option4</th>
+                <th>answer</th>
+                <th>action</th>
+            </tr>
+
+
+            {{#each HTML5Question}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.content}}</td>
+                <td>{{this.option1}}</td>
+                <td>{{this.option2}}</td>
+                <td>{{this.option3}}</td>
+                <td>{{this.option4}}</td>
+                <td>{{answer}}</td>
+                <td><a href="/EditingQuestion/{{this.id}}">Edit Or Add</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+    </div>
+    <br>
+    <br>
+
+</body>
+
+</html>

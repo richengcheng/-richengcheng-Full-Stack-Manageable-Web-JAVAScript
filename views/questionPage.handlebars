@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>questionPage</title>
+    <meta name="description" content="form to add new books">
+    <meta name="author" content="Mark Tyers">
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+
+<body>
+
+    <h1> Welcome To the question page</h1>
+
+    <h2> question number {{questionNumber}} </h2>
+
+
+
+    <p>{{content}}</p>
+    <br>
+
+    {{#if nextPageChecking}}
+    <form action="/questionPage/{{nextPageChecking}}" enctype="multipart/form-data" method="post">
+
+        <label> <input name="option" type="radio" value="{{option1}}" />{{option1}} </label>
+        <label> <input name="option" type="radio" value="{{option2}}" />{{option2}} </label>
+        <label> <input name="option" type="radio" value="{{option3}}" />{{option3}} </label>
+        <label> <input name="option" type="radio" value="{{option4}}" />{{option4}} </label>
+        <input type="submit" value="NextQuestion">
+        
+    </form><br>
+    {{/if }}
+
+    <h2>{{message}}</h2>
+    {{#if prePageChecking}}
+    
+    <form action="/questionPage/{{prePageChecking}}" method="get">
+        <input type="submit" value="previous Question">
+
+    </form>
+    {{/if }}
+
+    <p><a href="/logout">log out</a></p> <br>
+
+</body>
+
+</html>
